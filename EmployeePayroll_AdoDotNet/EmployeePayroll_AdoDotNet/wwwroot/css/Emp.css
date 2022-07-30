@@ -1,0 +1,51 @@
+﻿.header{
+    margin-top:0px;
+    padding-top:30px;
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    background-color:white;
+    width:80%;
+    margin-left:12%;
+    border-radius:20px;
+   
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+}
+.prof{
+    margin-left:50px;
+}
+.pro{
+    margin:15px;
+}
+.space {
+    padding: 1px;
+    margin-left: 10px;
+}
+.prob{
+    padding-top:18px
+}
+.gen{
+    padding-top:7px;
+}
+table{
+    background-color:white;
+}
+
+.buttonitem{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+}
+
+.mgbutton{
+    margin:30px;
+}
+.bttn{
+    margin:0 6em;
+}

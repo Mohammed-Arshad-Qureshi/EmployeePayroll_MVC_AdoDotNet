@@ -1,0 +1,85 @@
+﻿@model DataAccess_Layer.EmployeeModels.EmployeeModel
+
+@{
+    ViewData["Title"] = "UpdateEmployee";
+}
+
+
+<div class="header">
+    <div class="col-md-8">
+        <form asp-action="UpdateEmployee">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Emp_Id" type="hidden" />
+            <div class="form-group">
+                <label asp-for="Emp_Name" class="control-label"></label>
+                <input asp-for="Emp_Name" class="form-control" />
+                <span asp-validation-for="Emp_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group profile">
+
+                <label asp-for="Profile_Img" class="control-label prob"></label>
+                <div class="prof">
+                    @Html.RadioButtonFor(Model => Model.Profile_Img,"~/asserts/profiles/Profile1.png",new{@class="space"})
+                    <img class="pro" src="~/asserts/profiles/Profile1.png" />
+                    @Html.RadioButtonFor(Model => Model.Profile_Img,"~/asserts/profiles/Profile2.png",new{@class="space"})
+                    <img class="pro" src="~/asserts/profiles/Profile2.png" />
+                    @Html.RadioButtonFor(Model => Model.Profile_Img,"~/asserts/profiles/Profile3.png",new{@class="space"})
+                    <img class="pro" src="~/asserts/profiles/Profile3.png" />
+                    @Html.RadioButtonFor(Model => Model.Profile_Img,"~/asserts/profiles/Profile4.png",new{@class="space"})
+                    <img class="pro" src="~/asserts/profiles/Profile4.png" />
+
+                </div>
+            </div>
+                   <span asp-validation-for="Profile_Img" class="text-danger"></span>
+
+            <div class="form-group profile prob">
+                <div>
+                    <label asp-for="Gender" class="control-label gen"></label>
+                </div>
+                <div class="prof">
+                    <input id="Gender" class="pro" asp-for="Gender" name="Gender" value="Male" type="radio" checked>Male
+                    <input id="Gender" class="pro" asp-for="Gender" name="Gender" value="Female" type="radio">Female
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <select asp-for="Department" class="form-control" id="Dep">
+                    <option value="">Choose Department</option>
+                    <option value="HR">HR</option>
+                    <option value="IT Services">IT Services</option>
+                    <option value="Account & Finance">Account & Finance</option>
+                    <option value="Sales & Marketing">Sales & Marketing</option>
+                    <option value="Human Resources">Human Resources</option>
+                    <option value="Product Resources">Product Resources</option>
+                </select>
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" type="number" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="submit" class="btn bttn btn-primary" />
+                <a type="button" class="btn bttn btn-dark" asp-action="Index">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

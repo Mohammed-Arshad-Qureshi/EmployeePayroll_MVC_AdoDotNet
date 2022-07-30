@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DataAccess_Layer.EmployeeModels.EmployeeModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<button class="btn btn-success btn-sm" onclick='window.location.href ="@Url.Action("AddEmployee","Employee")" ;'> <i class="fa-solid fa-plus"></i> AddEmployee</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Emp_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile_Img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_Name)
+                </td>
+                <td>
+                    <img class="profile" src="@Url.Content(item.Profile_Img)" alt="profile" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    <button class="btn btn-primary text-white btn-sm" onclick='window.location.href ="@Url.Action("UpdateEmployee","Employee", new {id =@item.Emp_Id})" ;'><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn btn-danger text-white btn-sm" onclick='window.location.href ="@Url.Action("DeleteEmployee","Employee", new {id =@item.Emp_Id})" ;'><i class="fa-solid fa-trash-can"></i></button>
+
+
+                    @*<input type="button" class="btn btn-primary col-11" value="Edit" onclick='window.location.href = "@Url.Action("UpdateEmployee","Employee", new {id =@item.Emp_Id})"' />*@
+                    @*@Html.ActionLink("Details", "Details", new { id=item.Emp_Id }, new {@class = "btn btn-primary btn-sm"}) *@
+                    @*<input type="button" class="btn btn-Danger col-11" value="Delete" onclick='window.location.href = "@Url.Action("DeleteEmployee","Employee", new {id =@item.Emp_Id})"'/>*@
+                    @*<input type="button" class="btn btn-danger col-11" onclick='window.location.href = "@Url.Action("DeleteEmployee","Employee", new {id =@item.Emp_Id})"' />*@
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,20 @@
+﻿@model DataAccess_Layer.EmployeeModels.EmployeeModel
+
+@{
+    ViewData["Title"] = "DeleteEmployee";
+}
+
+<div class="header">
+<div class="text-center">
+<h1>DeleteEmployee</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+
+<div class="buttonitem delbttn">
+    <form asp-action="DeleteEmployee">
+         <button class="btn btn-danger btn-md mgbutton" type="submit" onclick='window.location.href ="@Url.Action("DeleteEmployee","Employee")" ;'> Delete</button>
+    </form>
+         <button class="btn btn-info btn-md mgbutton" onclick='window.location.href ="@Url.Action("Index","Employee")" ;'> Cancle</button>
+<div>
+</div>
+</div>
